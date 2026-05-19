@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{% load debug %}
 
 {% block content %}
   {% for post in object_list %}
     <div class="post-entry">
         <h2><a href="">{{ post.title }}</a></h2>
         <p>{{ post.body }}</p>
+        
+        <pre style="background: #f4f4f4; padding: 10px;">{{ post|as_dict }}</pre>
     </div>
   {% endfor %}
 {% endblock content %}
